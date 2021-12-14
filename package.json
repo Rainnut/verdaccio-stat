@@ -1,6 +1,6 @@
 {
   "name": "verdaccio-stat",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "description": "verdaccio middleware plugin to redirect to https",
   "main": "lib/index.js",
   "repository": {
@@ -30,7 +30,9 @@
   },
   "homepage": "https://github.com/Rainnut/verdaccio-stat#readme",
   "dependencies": {
-    "express": "4.17.1"
+    "express": "4.17.1",
+    "sqlite3": "^5.0.2",
+    "typeorm": "^0.2.41"
   },
   "devDependencies": {
     "@commitlint/cli": "8.2.0",

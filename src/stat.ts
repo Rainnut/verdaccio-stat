@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
-import { Logger, IPluginMiddleware, PluginOptions } from '@verdaccio/types';
+import * as fs from 'fs';
+import { Logger, IPluginMiddleware, PluginOptions, IBasicAuth, IStorageManager } from '@verdaccio/types';
 
 import { ConfigHttps } from './types';
 
@@ -14,8 +15,15 @@ export default class Https implements IPluginMiddleware<ConfigHttps> {
 
   register_middlewares(app: any) {
     app.use((req: Request, res: Response, next: any) => {
-      const xproto = req.header('x-forwarded-proto');
-      console.log('verdaccio-stat', req, res);
+      if (req.method === 'PUT') {
+        // publish your package
+      } else if (req.method === 'GET' && req.url.indexOf('/-/') !== -1) {
+        // install npm package
+        console.log(req.get('get package'));
+      }
+      console.log(req.get('npm-command'));
+      console.log(req.url);
+      console.log(req.method);
       next();
     });
   }
