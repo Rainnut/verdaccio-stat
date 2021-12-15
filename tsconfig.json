@@ -11,10 +11,13 @@
 		"typeRoots": [
 			"./node_modules/@verdaccio/types/lib/verdaccio",
 			"./node_modules/@types"
-		]
+		],
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"skipLibCheck": true,
 	},
 	"include": [
-		"src/*.ts",
+		"src/**/*.ts",
 		"types/*.d.ts"
 	]
 }

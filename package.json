@@ -1,6 +1,6 @@
 {
   "name": "verdaccio-stat",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "verdaccio middleware plugin to redirect to https",
   "main": "lib/index.js",
   "repository": {
@@ -8,6 +8,8 @@
     "url": "git+https://github.com/Rainnut/verdaccio-stat.git"
   },
   "scripts": {
+    "start": "ts-node src/index.ts",
+    "start:lib": "ts-node lib/index.js",
     "lint": "eslint . --ext .js,.ts",
     "prepublishOnly": "npm run build",
     "coverage:publish": "codecov",
@@ -31,17 +33,19 @@
   "homepage": "https://github.com/Rainnut/verdaccio-stat#readme",
   "dependencies": {
     "express": "4.17.1",
+    "reflect-metadata": "^0.1.13",
     "sqlite3": "^5.0.2",
     "typeorm": "^0.2.41"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.16.5",
     "@commitlint/cli": "8.2.0",
     "@commitlint/config-conventional": "8.2.0",
     "@commitlint/travis-cli": "8.2.0",
     "@types/express": "4.17.2",
     "@types/http-errors": "1.6.2",
     "@types/memory-fs": "0.3.2",
-    "@types/node": "12.11.2",
+    "@types/node": "^12.11.2",
     "@types/request": "2.48.3",
     "@typescript-eslint/parser": "2.6.1",
     "@verdaccio/babel-preset": "8.2.0",
